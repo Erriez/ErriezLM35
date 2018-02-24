@@ -34,8 +34,6 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 
 ## Documentation
 
-[](http://www.aosong.com/asp_bin/Products/en/AM2303.pdf)
-
 [DHT35 datasheet](https://www.google.com/search?q=LM35+datasheet)
 
 

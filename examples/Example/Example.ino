@@ -44,8 +44,8 @@ void setup()
 
 void loop()
 {
-  // Read temperature from sensor
-  int16_t lm35_temp = lm35.readTemperature();
+  // Read unsigned temperature from sensor
+  uint16_t lm35_temp = lm35.readTemperature();
 
   // Print temperature
   Serial.print(F("LM35: "));

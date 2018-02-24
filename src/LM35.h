@@ -47,7 +47,7 @@ class LM35
 {
 public:
   explicit LM35(uint8_t pin);
-  int16_t readTemperature();
+  uint16_t readTemperature();
 
 private:
   uint8_t _pin;

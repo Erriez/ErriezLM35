@@ -4,7 +4,7 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 
 ## Library features
 
-- Synchronous 16-bit temperature read
+- Synchronous 10-bit unsigned temperature read
 - Temperature range: 0.0 .. 110.0 degree Celsius
 - Accuracy: 0.1 degree Celsius
 - Noise cancellation
@@ -74,8 +74,8 @@ LM35 lm35 = LM35(LM35_PIN);
 ```c++
 void loop()
 {
-  // Read temperature from sensor
-  int16_t lm35_temp = lm35.readTemperature();
+  // Read unsigned temperature from sensor
+  uint16_t lm35_temp = lm35.readTemperature();
   
   // Print temperature
   Serial.print(F("LM35: "));

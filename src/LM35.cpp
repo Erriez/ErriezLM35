@@ -47,13 +47,14 @@ LM35::LM35(uint8_t pin) : _pin(pin)
 }
 
 /*!
- * \brief Read analog temperature in range between 0.0 .. 110 degree Celsius.
- * \details
+ * \brief Read unsigned analog temperature
+ * \details *
  *      Sample LM35 analog pin multiple times to find two identical samples to
  *      reduce noise. A maximum number of samples can be configured with macro
  *      LM35_MAX_SAMPLES. The last sampled temperature will be returned when
  *      no identical temperatures found.
  *
+ *      Temperature range: 0.0 .. 110 degree Celsius:
  *      A negative temperature cannot be measured, because the ADC pin can only
  *      sample between positive 0.0 and 1.1 Volt.
  * \return
@@ -61,10 +62,10 @@ LM35::LM35(uint8_t pin) : _pin(pin)
  *      modulo 10 results in the fraction, for example:
  *         int16_t temperature = 182 means 18.2 degree Celsius.
  */
-int16_t LM35::readTemperature()
+uint16_t LM35::readTemperature()
 {
-  int16_t temperatureLast = 0;
-  int16_t temperature = 0;
+  uint16_t temperatureLast = 0;
+  uint16_t temperature = 0;
 
   // Take multiple temperature samples with a maximum of LM35_MAX_SAMPLES
   for (uint8_t i = 0; i < LM35_MAX_SAMPLES; i++) {

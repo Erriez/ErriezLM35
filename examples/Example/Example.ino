@@ -33,6 +33,8 @@
 // Connect LM35 data pin to Arduino DIGITAL pin
 #define LM35_PIN   A0
 
+// This library changes ADC to 1.1V internal reference voltage which affects all
+// analog pins.
 LM35 lm35 = LM35(LM35_PIN);
 
 void setup()

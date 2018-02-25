@@ -40,7 +40,13 @@
 LM35::LM35(uint8_t pin) : _pin(pin)
 {
   // Configures internal ADC reference voltage to 1.1V of the ANALOG pins
+#if defined(INTERNAL)
   analogReference(INTERNAL);
+#elif defined(INTERNAL1V1)
+  analogReference(INTERNAL1V1);
+#else
+#error "analogReference() not supported for this MCU"
+#endif
 
   // Dummy read to clear previous ADC conversion
   (void)analogRead(_pin);

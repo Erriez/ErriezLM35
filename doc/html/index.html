@@ -78,10 +78,21 @@ $(function() {
 <li>Small footprint</li>
 </ul>
 <h2>Hardware</h2>
+<h3>Supported hardware</h3>
+<ul>
+<li>All ATmega328P MCU (Arduino UNO, Micro, Nano, etc)</li>
+<li>All ATmega32U4 MCU (Arduino Leonardo, Pro Micro, etc)</li>
+<li>Arduino ATmega2560</li>
+</ul>
+<p><b>Notes:</b></p>
+<ul>
+<li>This library changes analog pins to ADC 1.1V internal reference voltage which affects all analog pins.</li>
+<li>The function <code>analogReference()</code> may not be supported with other non-AVR MCU's.</li>
+</ul>
+<h3>Arduino UNO - <a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> example</h3>
 <div class="image">
 <img src="https://raw.githubusercontent.com/Erriez/ErriezLM35/master/extras/LM35_Arduino_UNO.png" alt="Schematic LM35 and Arduino UNO"/>
 </div>
-<p><b>Connection <a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> - Arduino UNO</b></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter"><a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a>  </th><th class="markdownTableHeadCenter">Arduino UNO   </th></tr>
@@ -95,7 +106,6 @@ $(function() {
 <p><b>Notes:</b></p>
 <ul>
 <li>Keep wires short to prevent noise.</li>
-<li>This library has been tested on the Arduino UNO only which supports internal 1.1V ADC reference voltage. This may not be available with other MCU's.</li>
 </ul>
 <h3><a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> pins</h3>
 <div class="image">

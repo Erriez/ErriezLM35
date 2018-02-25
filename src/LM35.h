@@ -33,8 +33,9 @@
 
 #include <Arduino.h>
 
-#ifndef __AVR_ATmega328P__
-#warning "Untested MCU"
+//! Check tested platform.
+#if !defined(AVR)
+#warning "Untested platform. Check analogReference() support."
 #endif
 
 //! Maximum number of LM35 ADC samples

@@ -13,9 +13,20 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 
 ## Hardware
 
-![Schematic LM35 and Arduino UNO](https://raw.githubusercontent.com/Erriez/ErriezLM35/master/extras/LM35_Arduino_UNO.png)
+### Supported hardware
 
-**Connection LM35 - Arduino UNO**
+* All ATmega328P MCU (Arduino UNO, Micro, Nano, etc)
+* All ATmega32U4 MCU (Arduino Leonardo, Pro Micro, etc)
+* Arduino ATmega2560
+
+**Notes:** 
+
+* This library changes analog pins to ADC 1.1V internal reference voltage which affects all analog pins.
+* The function ```analogReference()``` may not be supported with other non-AVR MCU's.
+
+### Arduino UNO - LM35 example
+
+![Schematic LM35 and Arduino UNO](https://raw.githubusercontent.com/Erriez/ErriezLM35/master/extras/LM35_Arduino_UNO.png)
 
 | LM35 |   Arduino UNO   |
 | :--: | :-------------: |
@@ -26,7 +37,6 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 **Notes:** 
 
 * Keep wires short to prevent noise.
-* This library has been tested on the Arduino UNO only which supports internal 1.1V ADC reference voltage. This may not be available with other MCU's.
 
 ### LM35 pins
 

@@ -83,13 +83,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0f52986460315b701acbba08484766f9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> constructor.  <a href="#a0f52986460315b701acbba08484766f9">More...</a><br /></td></tr>
 <tr class="separator:a0f52986460315b701acbba08484766f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b43b60a248cadb1b8f1b21ff4a91b20"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_m35.html#a1b43b60a248cadb1b8f1b21ff4a91b20">readTemperature</a> ()</td></tr>
-<tr class="memdesc:a1b43b60a248cadb1b8f1b21ff4a91b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read analog temperature in range between 0.0 .. 110 degree Celsius.  <a href="#a1b43b60a248cadb1b8f1b21ff4a91b20">More...</a><br /></td></tr>
+<tr class="memdesc:a1b43b60a248cadb1b8f1b21ff4a91b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read unsigned analog temperature.  <a href="#a1b43b60a248cadb1b8f1b21ff4a91b20">More...</a><br /></td></tr>
 <tr class="separator:a1b43b60a248cadb1b8f1b21ff4a91b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> sensor class. </p>
 
-<p class="definition">Definition at line <a class="el" href="_l_m35_8h_source.html#l00046">46</a> of file <a class="el" href="_l_m35_8h_source.html">LM35.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_m35_8h_source.html#l00047">47</a> of file <a class="el" href="_l_m35_8h_source.html">LM35.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0f52986460315b701acbba08484766f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f52986460315b701acbba08484766f9">&#9670;&nbsp;</a></span>LM35()</h2>
@@ -143,11 +143,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read analog temperature in range between 0.0 .. 110 degree Celsius. </p>
-<p>Sample <a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> analog pin multiple times to find two identical samples to reduce noise. A maximum number of samples can be configured with macro LM35_MAX_SAMPLES. The last sampled temperature will be returned when no identical temperatures found.</p>
-<p>A negative temperature cannot be measured, because the ADC pin can only sample between positive 0.0 and 1.1 Volt. </p><dl class="section return"><dt>Returns</dt><dd>Divide temperature by 10 to get the temperature integer, temperature modulo 10 results in the fraction, for example: int16_t temperature = 182 means 18.2 degree Celsius. </dd></dl>
+<p>Read unsigned analog temperature. </p>
+<ul>
+<li><p class="startli">Sample <a class="el" href="class_l_m35.html" title="LM35 sensor class. ">LM35</a> analog pin multiple times to find two identical samples to reduce noise. A maximum number of samples can be configured with macro LM35_MAX_SAMPLES. The last sampled temperature will be returned when no identical temperatures found.</p>
+<p class="startli">Temperature range: 0.0 .. 110 degree Celsius: A negative temperature cannot be measured, because the ADC pin can only sample between positive 0.0 and 1.1 Volt. </p><dl class="section return"><dt>Returns</dt><dd>Divide temperature by 10 to get the temperature integer, temperature modulo 10 results in the fraction, for example: int16_t temperature = 182 means 18.2 degree Celsius. </dd></dl>
+</li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="_l_m35_8cpp_source.html#l00064">64</a> of file <a class="el" href="_l_m35_8cpp_source.html">LM35.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_l_m35_8cpp_source.html#l00071">71</a> of file <a class="el" href="_l_m35_8cpp_source.html">LM35.cpp</a>.</p>
 
 </div>
 </div>

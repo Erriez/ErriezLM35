@@ -118,7 +118,7 @@ LM35: 18.2 *C
 
 * [Doxygen online HTML](https://erriez.github.io/ErriezLM35)
 * [Doxygen PDF](https://github.com/Erriez/ErriezLM35/raw/master/docs/latex/refman.pdf)
-* [DHT22 datasheet](https://www.google.com/search?q=LM35+datasheet)
+* [LM35 datasheet](https://www.google.com/search?q=LM35+datasheet)
 
 
 ## Library dependencies

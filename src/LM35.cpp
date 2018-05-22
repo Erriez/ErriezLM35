@@ -39,22 +39,22 @@
  */
 LM35::LM35(uint8_t pin) : _pin(pin)
 {
-  // Configures internal ADC reference voltage to 1.1V of the ANALOG pins
+// Configures internal ADC reference voltage to 1.1V of the ANALOG pins
 #if defined(INTERNAL)
-  analogReference(INTERNAL);
+    analogReference(INTERNAL);
 #elif defined(INTERNAL1V1)
-  analogReference(INTERNAL1V1);
+    analogReference(INTERNAL1V1);
 #else
 #error "analogReference() not supported for this MCU"
 #endif
 
-  // Dummy read to clear previous ADC conversion
-  (void)analogRead(_pin);
+    // Dummy read to clear previous ADC conversion
+    (void)analogRead(_pin);
 }
 
 /*!
  * \brief Read unsigned analog temperature
- * \details *
+ * \details
  *      Sample LM35 analog pin multiple times to find two identical samples to
  *      reduce noise. A maximum number of samples can be configured with macro
  *      LM35_MAX_SAMPLES. The last sampled temperature will be returned when
@@ -70,27 +70,27 @@ LM35::LM35(uint8_t pin) : _pin(pin)
  */
 uint16_t LM35::readTemperature()
 {
-  uint16_t temperatureLast = 0;
-  uint16_t temperature = 0;
+    uint16_t temperatureLast = 0;
+    uint16_t temperature = 0;
 
-  // Take multiple temperature samples with a maximum of LM35_MAX_SAMPLES
-  for (uint8_t i = 0; i < LM35_MAX_SAMPLES; i++) {
-    // Analog range: 0 .. 1.1V = 0 .. 1023 ADC value
-    // For example, LM35 analog signal of 0.182 V equals to 18.2 degree celsius
-    // 1024 / 1.1V = 931 ratio between analog sample and output temperature
-    // This calculation is multiplied by 1000 first to avoid expensive floating
-    // point instructions.
-    temperature = ((uint32_t)analogRead(_pin) * 1000) / 931;
+    // Take multiple temperature samples with a maximum of LM35_MAX_SAMPLES
+    for (uint8_t i = 0; i < LM35_MAX_SAMPLES; i++) {
+        // Analog range: 0 .. 1.1V = 0 .. 1023 ADC value
+        // For example, LM35 analog signal of 0.182 V equals to 18.2 degree celsius
+        // 1024 / 1.1V = 931 ratio between analog sample and output temperature
+        // This calculation is multiplied by 1000 first to avoid expensive floating
+        // point instructions.
+        temperature = ((uint32_t)analogRead(_pin) * 1000) / 931;
 
-    if (temperatureLast == temperature) {
-      // Two identical temperatures read, return
-      return temperature;
+        if (temperatureLast == temperature) {
+            // Two identical temperatures read, return
+            return temperature;
+        }
+
+        // Different temperatures, take another sample
+        temperatureLast = temperature;
     }
 
-    // Different temperatures, take another sample
-    temperatureLast = temperature;
-  }
-
-  // Return the last measured temperature
-  return temperatureLast;
+    // Return the last measured temperature
+    return temperatureLast;
 }

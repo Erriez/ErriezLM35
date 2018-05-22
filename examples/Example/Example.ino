@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-/* Analog LM35 temperature sensor example for Arduino
- *
- * Required libraries:
- *   https://github.com/Erriez/ErriezLM35
+/*!
+ * \brief Analog LM35 temperature sensor example for Arduino
+ * \details
+ *    Required library: https://github.com/Erriez/ErriezLM35
  */
 
 #include <LM35.h>
@@ -33,44 +33,47 @@
 // Connect LM35 data pin to Arduino DIGITAL pin
 #define LM35_PIN   A0
 
-// This library changes ADC to 1.1V internal reference voltage which affects all
-// analog pins.
+// This library changes ADC to 1.1V internal reference voltage which affects all analog pins.
 LM35 lm35 = LM35(LM35_PIN);
+
 
 void setup()
 {
-  // Initialize serial port
-  Serial.begin(115200);
-  Serial.println(F("Analog LM35 temperature sensor example\n"));
+    // Initialize serial port
+    Serial.begin(115200);
+    while(!Serial) {
+        ;
+    }
+    Serial.println(F("Analog LM35 temperature sensor example\n"));
 }
 
 void loop()
 {
-  // Read unsigned temperature from sensor
-  uint16_t lm35_temp = lm35.readTemperature();
+    // Read unsigned temperature from sensor
+    uint16_t lm35_temp = lm35.readTemperature();
 
-  // Print temperature
-  Serial.print(F("LM35: "));
-  Serial.print(lm35_temp / 10);
-  Serial.print(F("."));
-  Serial.print(lm35_temp % 10);
+    // Print temperature
+    Serial.print(F("LM35: "));
+    Serial.print(lm35_temp / 10);
+    Serial.print(F("."));
+    Serial.print(lm35_temp % 10);
 
-  // Print degree celsius symbols
-  // Choose if (1) for normal or if (0) for extended ASCII degree symbol
-  if (1) {
-    // Print *C characters which are displayed correctly in the serial
-    // terminal of the Arduino IDE
-    Serial.println(F(" *C"));
-  } else {
-    // Note: Extended characters are not supported in the Arduino IDE and
-    // displays ?C. This is displayed correctly with other serial terminals
-    // such as Tera Term.
-    // Degree symbol is ASCII code 248 (decimal).
-    char buf[4];
-    snprintf_P(buf, sizeof(buf), PSTR(" %cC"), 248);
-    Serial.println(buf);
-  }
+    // Print degree celsius symbols
+    // Choose if (1) for normal or if (0) for extended ASCII degree symbol
+    if (1) {
+        // Print *C characters which are displayed correctly in the serial
+        // terminal of the Arduino IDE
+        Serial.println(F(" *C"));
+    } else {
+        // Note: Extended characters are not supported in the Arduino IDE and
+        // displays ?C. This is displayed correctly with other serial terminals
+        // such as Tera Term.
+        // Degree symbol is ASCII code 248 (decimal).
+        char buf[4];
+        snprintf_P(buf, sizeof(buf), PSTR(" %cC"), 248);
+        Serial.println(buf);
+    }
 
-  // Wait some time
-  delay(2000);
+    // Wait some time
+    delay(2000);
 }

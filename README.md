@@ -1,4 +1,5 @@
 # LM35 temperature sensor library for Arduino
+[![Build Status](https://travis-ci.org/Erriez/ErriezLM35.svg?branch=master)](https://travis-ci.org/Erriez/ErriezLM35)
 
 This is an accurate LM35 analog temperature sensor library for Arduino with noise cancellation.
 
@@ -113,3 +114,18 @@ LM35: 18.2 *C
 ...
 ```
 
+## Documentation
+
+* [Doxygen online HTML](https://erriez.github.io/ErriezLM35)
+* [Doxygen PDF](https://github.com/Erriez/ErriezLM35/raw/master/docs/latex/refman.pdf)
+* [DHT22 datasheet](https://www.google.com/search?q=LM35+datasheet)
+
+
+## Library dependencies
+
+* None
+
+
+## Library installation
+
+Please refer to the [Wiki](https://github.com/Erriez/ErriezArduinoLibrariesAndSketches/wiki) page.

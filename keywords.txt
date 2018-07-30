@@ -6,19 +6,19 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-LM35					KEYWORD1
+LM35	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-readTemperature			KEYWORD2
+readTemperature	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
 #######################################
 
-lm35					KEYWORD2
+lm35	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

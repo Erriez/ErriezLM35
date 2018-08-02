@@ -23,9 +23,11 @@
  */
 
 /*!
- * \brief Analog LM35 temperature sensor library for Arduino
- * \details Source: https://github.com/Erriez/ErriezLM35
  * \file LM35.cpp
+ * \brief Analog LM35 temperature sensor library for Arduino
+ * \details
+ *      Source:         https://github.com/Erriez/ErriezLM35
+ *      Documentation:  https://erriez.github.io/ErriezLM35
  */
 
 #include "LM35.h"

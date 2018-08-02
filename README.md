@@ -43,10 +43,12 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 
 ![LM35 pins](https://raw.githubusercontent.com/Erriez/ErriezLM35/master/extras/LM35_pins.png)
 
+
 ## Documentation
 
-[DHT35 datasheet](https://www.google.com/search?q=LM35+datasheet)
-
+* [Doxygen online HTML](https://erriez.github.io/ErriezLM35)
+* [Doxygen PDF](https://github.com/Erriez/ErriezLM35/raw/gh-pages/latex/ErriezLM35.pdf)
+* [LM35 datasheet](https://www.google.com/search?q=LM35+datasheet)
 
 
 ## LM35 specifications
@@ -56,13 +58,11 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 - Analog voltage interface
 
 
-
 ## Examples
 
 Examples | ErriezLM35:
 
 * [Example](https://github.com/Erriez/ErriezLM35/blob/master/examples/Example/Example.ino)
-
 
 
 ## Usage
@@ -77,7 +77,6 @@ Examples | ErriezLM35:
   
 LM35 lm35 = LM35(LM35_PIN);
 ```
-
 
 
 **Read temperature and humidity**
@@ -101,7 +100,6 @@ void loop()
 ```
 
 
-
 **Serial output**
 
 ```
@@ -113,12 +111,6 @@ LM35: 18.2 *C
   
 ...
 ```
-
-## Documentation
-
-* [Doxygen online HTML](https://erriez.github.io/ErriezLM35)
-* [Doxygen PDF](https://github.com/Erriez/ErriezLM35/raw/master/docs/latex/refman.pdf)
-* [LM35 datasheet](https://www.google.com/search?q=LM35+datasheet)
 
 
 ## Library dependencies

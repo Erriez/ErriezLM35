@@ -44,13 +44,6 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 ![LM35 pins](https://raw.githubusercontent.com/Erriez/ErriezLM35/master/extras/LM35_pins.png)
 
 
-## Documentation
-
-* [Doxygen online HTML](https://erriez.github.io/ErriezLM35)
-* [Doxygen PDF](https://github.com/Erriez/ErriezLM35/raw/gh-pages/latex/ErriezLM35.pdf)
-* [LM35 datasheet](https://www.google.com/search?q=LM35+datasheet)
-
-
 ## LM35 specifications
 
 - Supply voltage: 3.3V .. 30V
@@ -63,6 +56,13 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 Examples | ErriezLM35:
 
 * [Example](https://github.com/Erriez/ErriezLM35/blob/master/examples/Example/Example.ino)
+
+
+## Documentation
+
+* [Doxygen online HTML](https://erriez.github.io/ErriezLM35)
+* [Doxygen PDF](https://github.com/Erriez/ErriezLM35/raw/gh-pages/latex/ErriezLM35.pdf)
+* [LM35 datasheet](https://www.google.com/search?q=LM35+datasheet)
 
 
 ## Usage

@@ -53,9 +53,9 @@ This is an accurate LM35 analog temperature sensor library for Arduino with nois
 
 ## Examples
 
-Examples | ErriezLM35:
+Arduino IDE | Examples | Erriez LM35 analog temperature:
 
-* [Example](https://github.com/Erriez/ErriezLM35/blob/master/examples/Example/Example.ino)
+* [Example](https://github.com/Erriez/ErriezLM35/blob/master/examples/LM35/LM35.ino)
 
 
 ## Documentation

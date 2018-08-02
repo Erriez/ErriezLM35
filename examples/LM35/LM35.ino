@@ -25,7 +25,8 @@
 /*!
  * \brief Analog LM35 temperature sensor example for Arduino
  * \details
- *    Required library: https://github.com/Erriez/ErriezLM35
+ *      Source:         https://github.com/Erriez/ErriezLM35
+ *      Documentation:  https://erriez.github.io/ErriezLM35
  */
 
 #include <LM35.h>

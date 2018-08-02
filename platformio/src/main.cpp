@@ -22,97 +22,59 @@
  * SOFTWARE.
  */
 
-/* DHT22 - AM2303 temperature and relative humidity sensor example for Arduino
- *
- * Required library:
- *   https://github.com/Erriez/ErriezDHT22
+/*!
+ * \brief Analog LM35 temperature sensor example for Arduino
+ * \details
+ *      Source:         https://github.com/Erriez/ErriezLM35
+ *      Documentation:  https://erriez.github.io/ErriezLM35
  */
 
-#include <DHT22.h>
+#include <LM35.h>
 
-// Connect DTH22 data pin to Arduino DIGITAL pin
-#define DHT22_PIN   2
+// Connect LM35 data pin to Arduino DIGITAL pin
+#define LM35_PIN   A0
 
-// Create DHT22 sensor object
-DHT22 sensor = DHT22(DHT22_PIN);
+// This library changes ADC to 1.1V internal reference voltage which affects all analog pins.
+LM35 lm35 = LM35(LM35_PIN);
 
-// Function prototypes
-void printTemperature(int16_t temperature);
-void printHumidity(int16_t humidity);
 
 void setup()
 {
-  // Initialize serial port
-  Serial.begin(115200);
-  Serial.println(F("DHT22 temperature and humidity sensor example\n"));
-
-  // Initialize sensor
-  sensor.begin();
+    // Initialize serial port
+    Serial.begin(115200);
+    while(!Serial) {
+        ;
+    }
+    Serial.println(F("Analog LM35 temperature sensor example\n"));
 }
 
 void loop()
 {
-  // Check minimum interval of 2000 ms between sensor reads
-  if (sensor.available()) {
-    // Read temperature from sensor (blocking)
-    int16_t temperature = sensor.readTemperature();
-
-    // Read humidity from sensor (blocking)
-    int16_t humidity = sensor.readHumidity();
+    // Read unsigned temperature from sensor
+    uint16_t lm35_temp = lm35.readTemperature();
 
     // Print temperature
-    printTemperature(temperature);
-
-    // Print humidity
-    printHumidity(humidity);
-  }
-}
-
-void printTemperature(int16_t temperature)
-{
-  // Check valid temperature value
-  if (temperature == ~0) {
-    // Temperature error (Check hardware connection)
-    Serial.println(F("Temperature: Error"));
-  } else {
-    // Print temperature
-    Serial.print(F("Temperature: "));
-    Serial.print(temperature / 10);
+    Serial.print(F("LM35: "));
+    Serial.print(lm35_temp / 10);
     Serial.print(F("."));
-    Serial.print(temperature % 10);
+    Serial.print(lm35_temp % 10);
 
-    // Print degree Celsius symbols
+    // Print degree celsius symbols
     // Choose if (1) for normal or if (0) for extended ASCII degree symbol
     if (1) {
-      // Print *C characters which are displayed correctly in the serial
-      // terminal of the Arduino IDE
-      Serial.println(F(" *C"));
+        // Print *C characters which are displayed correctly in the serial
+        // terminal of the Arduino IDE
+        Serial.println(F(" *C"));
     } else {
-      // Note: Extended characters are not supported in the Arduino IDE and
-      // displays ?C. This is displayed correctly with other serial terminals
-      // such as Tera Term.
-      // Degree symbol is ASCII code 248 (decimal).
-      char buf[4];
-      snprintf_P(buf, sizeof(buf), PSTR(" %cC"), 248);
-      Serial.println(buf);
+        // Note: Extended characters are not supported in the Arduino IDE and
+        // displays ?C. This is displayed correctly with other serial terminals
+        // such as Tera Term.
+        // Degree symbol is ASCII code 248 (decimal).
+        char buf[4];
+        snprintf_P(buf, sizeof(buf), PSTR(" %cC"), 248);
+        Serial.println(buf);
     }
-  }
-}
 
-void printHumidity(int16_t humidity)
-{
-  // Check valid humidity value
-  if (humidity == ~0) {
-    // Humidity error (Check hardware connection)
-    Serial.println(F("Humidity: Error"));
-  } else {
-    // Print humidity
-    Serial.print(F("Humidity: "));
-    Serial.print(humidity / 10);
-    Serial.print(F("."));
-    Serial.print(humidity % 10);
-    Serial.println(F(" %"));
-  }
-
-  Serial.println();
+    // Wait some time
+    delay(2000);
 }

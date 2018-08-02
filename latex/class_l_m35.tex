@@ -1,0 +1,77 @@
+\hypertarget{class_l_m35}{}\section{L\+M35 Class Reference}
+\label{class_l_m35}\index{L\+M35@{L\+M35}}
+
+
+\hyperlink{class_l_m35}{L\+M35} sensor class.  
+
+
+
+
+{\ttfamily \#include $<$L\+M35.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_l_m35_a0f52986460315b701acbba08484766f9}{L\+M35} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_l_m35}{L\+M35} constructor. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{class_l_m35_a1b43b60a248cadb1b8f1b21ff4a91b20}{read\+Temperature} ()
+\begin{DoxyCompactList}\small\item\em Read unsigned analog temperature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_l_m35}{L\+M35} sensor class. 
+
+Definition at line 49 of file L\+M35.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{L\+M35@{L\+M35}!L\+M35@{L\+M35}}
+\index{L\+M35@{L\+M35}!L\+M35@{L\+M35}}
+\subsubsection[{\texorpdfstring{L\+M35(uint8\+\_\+t pin)}{LM35(uint8_t pin)}}]{\setlength{\rightskip}{0pt plus 5cm}L\+M35\+::\+L\+M35 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{pin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_l_m35_a0f52986460315b701acbba08484766f9}{}\label{class_l_m35_a0f52986460315b701acbba08484766f9}
+
+
+\hyperlink{class_l_m35}{L\+M35} constructor. 
+
+The constructor changes the A\+DC to 1.\+1V internal A\+DC reference voltage for higher accuracy. This affects all A\+N\+A\+L\+OG pins. 
+\begin{DoxyParams}{Parameters}
+{\em pin} & \hyperlink{class_l_m35}{L\+M35} analog pin. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file L\+M35.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{L\+M35@{L\+M35}!read\+Temperature@{read\+Temperature}}
+\index{read\+Temperature@{read\+Temperature}!L\+M35@{L\+M35}}
+\subsubsection[{\texorpdfstring{read\+Temperature()}{readTemperature()}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t L\+M35\+::read\+Temperature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_m35_a1b43b60a248cadb1b8f1b21ff4a91b20}{}\label{class_l_m35_a1b43b60a248cadb1b8f1b21ff4a91b20}
+
+
+Read unsigned analog temperature. 
+
+Sample \hyperlink{class_l_m35}{L\+M35} analog pin multiple times to find two identical samples to reduce noise. A maximum number of samples can be configured with macro L\+M35\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+P\+L\+ES. The last sampled temperature will be returned when no identical temperatures found.
+
+Temperature range\+: 0.\+0 .. 110 degree Celsius\+: A negative temperature cannot be measured, because the A\+DC pin can only sample between positive 0.\+0 and 1.\+1 Volt. \begin{DoxyReturn}{Returns}
+Divide temperature by 10 to get the temperature integer, temperature modulo 10 results in the fraction, for example\+: int16\+\_\+t temperature = 182 means 18.\+2 degree Celsius. 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file L\+M35.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_l_m35_8h}{L\+M35.\+h}\item 
+\hyperlink{_l_m35_8cpp}{L\+M35.\+cpp}\end{DoxyCompactItemize}

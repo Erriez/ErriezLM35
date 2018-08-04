@@ -23,15 +23,15 @@
  */
 
 /*!
- * \file LM35.h
+ * \file ErriezLM35.h
  * \brief Analog LM35 temperature sensor library for Arduino
  * \details
  *      Source:         https://github.com/Erriez/ErriezLM35
  *      Documentation:  https://erriez.github.io/ErriezLM35
  */
 
-#ifndef LM35_H__
-#define LM35_H__
+#ifndef ERRIEZ_LM35_H_
+#define ERRIEZ_LM35_H_
 
 #include <Arduino.h>
 
@@ -56,4 +56,4 @@ private:
     uint8_t _pin;
 };
 
-#endif // LM35_H__
+#endif // ERRIEZ_LM35_H_

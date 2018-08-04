@@ -70,7 +70,7 @@ Arduino IDE | Examples | Erriez LM35 analog temperature:
 **Initialization**
 
 ```c++
-#include <LM35.h>
+#include <ErriezLM35.h>
   
 // Connect LM35 data pin to Arduino DIGITAL pin
 #define LM35_PIN   A0

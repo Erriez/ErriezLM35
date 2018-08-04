@@ -51,9 +51,9 @@ include_directories(${SRC_DIR})
 generate_arduino_library(
         ${PROJECT_NAME}Lib
         SRCS
-            ${SRC_DIR}/LM35.cpp
+            ${SRC_DIR}/ErriezLM35.cpp
         HDRS
-            ${SRC_DIR}/LM35.h
+            ${SRC_DIR}/ErriezLM35.h
 )
 
 # Configure project

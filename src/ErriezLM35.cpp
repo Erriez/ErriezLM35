@@ -41,6 +41,7 @@
  */
 LM35::LM35(uint8_t pin) : _pin(pin)
 {
+#if defined(ARDUINO_ARCH_AVR)
 // Configures internal ADC reference voltage to 1.1V of the ANALOG pins
 #if defined(INTERNAL)
     analogReference(INTERNAL);
@@ -48,6 +49,7 @@ LM35::LM35(uint8_t pin) : _pin(pin)
     analogReference(INTERNAL1V1);
 #else
 #error "analogReference() not supported for this MCU"
+#endif
 #endif
 
     // Dummy read to clear previous ADC conversion
